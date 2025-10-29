@@ -1,5 +1,5 @@
 const axios = require('axios');
-const SPRING_BOOT_API_URL = process.env.SPRING_API_URL || 'http://localhost:8080/api';
+const SPRING_BOOT_API_URL = 'http://localhost:8080/api';
 
 const acceptGame = async (id, token) => {
 
@@ -7,8 +7,7 @@ const acceptGame = async (id, token) => {
     
         const config = {
             headers: {
-                'Authorization': token,
-                'ngrok-skip-browser-warning': 'true'
+                'Authorization': token
             }
         };
 
