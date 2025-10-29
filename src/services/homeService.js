@@ -16,12 +16,14 @@ const getHome = async (token) => {
 
         const responseSpring = await axios.get(`${SPRING_BOOT_API_URL}/home/`, config);
 
+        const data = responseSpring.data;
+
         const response = {
-            ...responseSpring,
+            ...data,
             id_contenedor: containerId
         };
 
-        return response.data;
+        return response;
 
     } catch(error){
 
