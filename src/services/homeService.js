@@ -1,6 +1,9 @@
 const axios = require('axios');
 const SPRING_BOOT_API_URL = 'http://172.31.30.92:8080/api';
 
+const os = require('os');
+const containerId = os.hostname();
+
 const getHome = async (token) => {
 
     try {
@@ -11,7 +14,12 @@ const getHome = async (token) => {
             }
         };
 
-        const response = await axios.get(`${SPRING_BOOT_API_URL}/home/`, config);
+        const responseSpring = await axios.get(`${SPRING_BOOT_API_URL}/home/`, config);
+
+        const response = {
+            ...responseSpring,
+            id_contenedor: containerId
+        };
 
         return response.data;
 
