@@ -2,8 +2,6 @@ FROM node:18-alpine
 
 WORKDIR /app
 
-RUN apk add --no-cache ca-certificates
-
 COPY package*.json ./
 
 RUN npm ci --only=production
@@ -11,6 +9,7 @@ RUN npm ci --only=production
 COPY . .
 
 ENV NODE_ENV=production
+ENV SPRING_SERVICE_URL=${SPRING_SERVICE_URL}
 
 EXPOSE 3000
 
