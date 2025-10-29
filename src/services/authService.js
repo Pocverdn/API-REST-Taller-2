@@ -14,7 +14,7 @@ const login = async (username, password) => {
         const response = await axios.post(`${SPRING_URL}/auth/login`, {
             username: username,
             password: password
-        }, config);
+        }, config); 
         
         return response.data;
         
