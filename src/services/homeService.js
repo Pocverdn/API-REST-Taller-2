@@ -1,5 +1,5 @@
 const axios = require('axios');
-const SPRING_BOOT_API_URL = process.env.SPRING_BOOT_API_URL || 'http://localhost:8080/api';
+const SPRING_BOOT_API_URL = 'http://172.31.30.92:8080/api';
 
 const getHome = async (token) => {
 
