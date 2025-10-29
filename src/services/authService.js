@@ -4,10 +4,17 @@ const SPRING_URL = process.env.SPRING_API_URL || 'http://localhost:8080/api';
 
 const login = async (username, password) => {
     try {
+        
+        const config = {
+            headers: {
+                'ngrok-skip-browser-warning': 'true'
+            }
+        };
+        
         const response = await axios.post(`${SPRING_URL}/auth/login`, {
             username: username,
             password: password
-        });
+        }, config);
         
         return response.data;
         
@@ -31,11 +38,17 @@ const register = async (username, password, confirmPassword) => {
 
     try {
 
+        const config = {
+            headers: {
+                'ngrok-skip-browser-warning': 'true'
+            }
+        };
+
         const response = await axios.post(`${SPRING_URL}/auth/register`, {
             username: username,
             password: password,
             confirmPassword: confirmPassword
-        });
+        }, config);
         
         return response.data;
 

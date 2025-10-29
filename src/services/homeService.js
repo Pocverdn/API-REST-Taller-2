@@ -7,7 +7,8 @@ const getHome = async (token) => {
 
         const config = {
             headers: {
-                'Authorization': token
+                'Authorization': token,
+                'ngrok-skip-browser-warning': 'true'
             }
         };
 
