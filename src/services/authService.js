@@ -2,6 +2,7 @@ const axios = require('axios');
 
 const SPRING_URL = process.env.SPRING_SERVICE_URL || 'http://localhost:8080/api';
 
+
 const login = async (username, password) => {
     try {
         const response = await axios.post(`${SPRING_URL}/auth/login`, {
